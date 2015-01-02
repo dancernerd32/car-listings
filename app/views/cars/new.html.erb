@@ -1,0 +1,18 @@
+<%= form_for ([@manufacturer, @car]) do |f| %>
+  <div>
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </div>
+  <div>
+    <%= f.label :year %>
+    <%= f.text_field :year %>
+  </div>
+  <div>
+    <%= f.label :mileage %>
+    <%= f.text_field :mileage %>
+  </div>
+  <div>
+    <%= f.submit 'Submit' %>
+  </div>
+
+<% end %>
