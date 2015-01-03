@@ -1,12 +1,12 @@
 <%= form_for @manufacturer do |f| %>
 
-<% if @manufacturer.errors.any? %>
-<ul>
-  <% @manufacturer.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
+  <% if @manufacturer.errors.any? %>
+  <ul>
+    <% @manufacturer.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
   <% end %>
-</ul>
-<% end %>
   <div>
     <%= f.label :name %>
     <%= f.text_field :name %>

@@ -1,0 +1,12 @@
+<h1><%= "#{@car.year} #{@car.name} (#{@car.color})" %></h1>
+
+<ul>
+  <li>Make: <%= @car.manufacturer.name %></li>
+  <li>Model: <%= @car.name %></li>
+  <li>Year: <%= @car.year %></li>
+  <li>Color: <%= @car.color %></li>
+  <li>Mileage: <%= @car.mileage %></li>
+  <% if @car.description %>
+    <li>Description: <%= @car.description %></li>
+  <% end %>
+</ul>

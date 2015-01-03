@@ -1,16 +1,40 @@
+<h1>Record Newly Acquired <%= @manufacturer.name %></h1>
+
 <%= form_for ([@manufacturer, @car]) do |f| %>
+
+  <% if @car.errors.any? %>
+    <ul>
+      <% @car.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= f.label :name, "Model" %>
+    <%= f.text_field :name %>
+  </div>
+
   <div>
     <%= f.label :color %>
     <%= f.text_field :color %>
   </div>
+
   <div>
     <%= f.label :year %>
     <%= f.text_field :year %>
   </div>
+
   <div>
     <%= f.label :mileage %>
     <%= f.text_field :mileage %>
   </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
   <div>
     <%= f.submit 'Submit' %>
   </div>

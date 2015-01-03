@@ -1,10 +1,11 @@
 require 'rails_helper'
 
-feature "User records a car manufacturer" do
-  # As a car salesperson
-  # I want to record a car manufacturer
-  # So that I can keep track of the types of cars found in the lot
-  #
+feature "User records a car manufacturer", %{
+  As a car salesperson
+  I want to record a car manufacturer
+  So that I can keep track of the types of cars found in the lot
+  } do
+  
   # Acceptance Criteria:
   #
   # * I must specify a manufacturer name and country.
@@ -21,6 +22,7 @@ feature "User records a car manufacturer" do
 
     click_on 'Submit'
 
+
     expect(page).to have_content 'Success'
     expect(page).to have_content 'Car Manufacturers'
     expect(page).to have_content manufacturer.name
@@ -34,6 +36,7 @@ feature "User records a car manufacturer" do
     fill_in 'Name', with: manufacturer.name
 
     click_on 'Submit'
+
 
     expect(page).to have_content "Country can't be blank"
     expect(page).to have_content "Name has already been taken"

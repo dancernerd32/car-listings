@@ -9,6 +9,8 @@ class CarsController < ApplicationController
     if @car.save
       flash[:notice] = 'Success!'
       redirect_to manufacturer_cars_path
+    else
+      render :new 
     end
   end
 
@@ -17,8 +19,13 @@ class CarsController < ApplicationController
     @cars = @manufacturer.cars
   end
 
+  def show
+    @car = Car.find(params[:id])
+  end
+
+
   private
   def car_params
-    params.require(:car).permit(:color, :year, :mileage)
+    params.require(:car).permit(:name, :color, :year, :mileage, :description)
   end
 end

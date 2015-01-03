@@ -17,6 +17,7 @@ class ManufacturersController < ApplicationController
     @manufacturers = Manufacturer.all
   end
 
+
   private
 
   def manufacturer_params

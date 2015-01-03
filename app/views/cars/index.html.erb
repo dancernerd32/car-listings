@@ -1,14 +1,15 @@
 <h1><%= @manufacturer.name %></h1>
+<h5><%= @manufacturer.country %></h5>
 
 <ul>
   <% @cars.each do |car| %>
     <li>
-      <ul>
-        <li>Year: <%= car.year %></li>
-        <li>Color: <%= car.color %></li>
-        <li>Mileage: <%= car.mileage %> miles</li>
-        <li>Description: <%= car.description %></li>
-      </ul>
+      <%= link_to("#{car.year} #{car.name} (#{car.color})", manufacturer_car_path(@manufacturer, car)) %>
     </li>
   <% end %>
 </ul>
+
+<div>
+  <p><%= link_to("Record New Car", new_manufacturer_car_path(@manufacturer)) %></p>
+</div>
+<p><%= link_to("Home", root_path) %></p>

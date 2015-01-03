@@ -1,7 +1,10 @@
 <h1>Car Manufacturers</h1>
+<h3>Select a manufacturer to view or add cars</h3>
 
 <ul>
   <% @manufacturers.each do |man| %>
-    <li><%= man.name %></li>
+    <li><%= link_to(man.name, manufacturer_cars_path(man)) %></li>
   <% end %>
 </ul>
+
+<%= link_to("Add a manufacturer", new_manufacturer_path) %>
